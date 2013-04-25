@@ -1,0 +1,41 @@
+{
+  "name": "tic_tac_toe_html_cordova",
+  "description": "Classic Tic Tac Toe game",
+  "version": "0.0.1",
+  "homepage": "https://github.com/psychomantys",
+  "main": "www/index.html",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Psycho Mantys",
+  "keywords": [
+    "cordova"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "cordova": "~2.6.2",
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.7",
+    "grunt-shell": "~0.2.2",
+    "temporary": "0.0.5",
+    "grunt-contrib-jasmine": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-linter": "~0.3.1"
+  },
+  "contributors": [ {
+    "name": "Psycho Mantys",
+    "email": "psycho.mantys@gmail.com"
+  } ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/psychomantys/tic_tac_toe_html_cordova.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psychomantys/tic_tac_toe_html_cordova/issues"
+  },
+  "licenses": [ {
+    "type": "GPL",
+    "url": "https://psychomantys.github.com/tic_tac_toe_html_cordova/LICENSE"
+  } ]
+}
+
