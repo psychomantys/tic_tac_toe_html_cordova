@@ -22,10 +22,12 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-linter": "~0.3.1"
   },
-  "contributors": [ {
-    "name": "Psycho Mantys",
-    "email": "psycho.mantys@gmail.com"
-  } ],
+  "contributors": [
+    {
+      "name": "Psycho Mantys",
+      "email": "psycho.mantys@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/psychomantys/tic_tac_toe_html_cordova.git"
@@ -33,9 +35,10 @@
   "bugs": {
     "url": "https://github.com/psychomantys/tic_tac_toe_html_cordova/issues"
   },
-  "licenses": [ {
-    "type": "GPL",
-    "url": "https://psychomantys.github.com/tic_tac_toe_html_cordova/LICENSE"
-  } ]
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "https://psychomantys.github.com/tic_tac_toe_html_cordova/LICENSE"
+    }
+  ]
 }
-
