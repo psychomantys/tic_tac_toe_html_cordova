@@ -11,35 +11,20 @@ module.exports = function(grunt) {
 			' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
 			' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */\n'
 	},
-/*
-	concat: {
-		dist: {
-			src: ['<banner:meta.banner>', '<file_strip_banner:www/js/<%= pkg.name %>.js>', 'www/js/ ** /*.js'],
-			dest: 'www/js/<%= pkg.name %>.js'
-		}
-	},
-	min: {
-		dist: {
-			src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-			dest: 'www/js/<%= pkg.name %>.min.js'
-		}
-	},
-	jshint: {
-		options: {},
-		globals: {}
-	},
-*/
 	linter: {
 		files: [ 'Gruntfile.js', 'package.json',
 			'www/js/**/*.js', 'www/js/spec/**/*.js',
-			'!www/js/thirdparty/**/*.js', '!www/js/**/*.min.js'
+			'!www/thirdparty/**/*.js', '!www/js/**/*.min.js'
 		],
 		globals: {
 			jQuery: true,
 			$: true,
 			describe: true,
 			it: true,
-			expect: true
+			expect: true,
+			define: true,
+			require: true,
+			requirejs: true
 		}
 	},
 	watch: {
@@ -66,31 +51,42 @@ module.exports = function(grunt) {
 		debug_blackberry: {
 			command: 'cordova build blackberry && cordova emulate blackberry'
 		}
-	},
-	uglify: {
-		options: {
-			mangle: false,
-			banner: '<%= meta.banner %>'
-		},tic_tac_toe: {
-			files: {
-				'www/js/<%= pkg.name %>.min.js': [ 'www/js/tic_tac_toe/**/*.js' ]
+	},requirejs: {
+		compile: {
+			options: {
+				baseUrl: ".",
+				name: "www/js/tic_tac_toe/tic_tac_toe.js",
+//				mainConfigFile: "www/js/tic_tac_toe/tic_tac_toe.js",
+				out: 'www/js/tic_tac_toe/tic_tac_toe.min.js',
+				optimize: "uglify2"
 			}
 		}
-	} 
+	}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-linter');
+	grunt.loadNpmTasks('grunt-volo');
+	grunt.loadNpmTasks('grunt-linter');
+
 
 	// Default task
-	grunt.registerTask('default', ['linter','jasmine','uglify']);
+	grunt.registerTask('default', ['test_syntax','min_code','test_tdd']);
 
 	// Custom tasks
-	grunt.registerTask('test', ['linter','jasmine']);
-	grunt.registerTask('debug:ios', ['linter','jasmine','uglify','shell:debug_ios']);
-	grunt.registerTask('debug:android', ['linter','jasmine','uglify','shell:debug_android']);
-	grunt.registerTask('debug:blackberry', ['linter','jasmine','uglify','shell:debug_blackberry']);
+	grunt.registerTask('test', ['test_syntax','test_tdd']);
+
+	grunt.registerTask('debug:ios', ['test_syntax','test_tdd','min_code','shell:debug_ios']);
+	grunt.registerTask('debug:android', ['test_syntax','test_tdd','min_code','shell:debug_android']);
+	grunt.registerTask('debug:blackberry', ['test_syntax','test_tdd','min_code','shell:debug_blackberry']);
+
+	// Resolve and get deps.
+	grunt.registerTask('get_deps', ['volo:install']);
+
+	grunt.registerTask('test_syntax', ['linter']);
+	grunt.registerTask('test_tdd', ['jasmine']);
+	grunt.registerTask('min_code', ['requirejs']);
 };
 
