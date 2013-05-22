@@ -13,7 +13,7 @@ require.config({
 	}
 });
 
-require(["jquery","js/tic_tac_toe/tic_tac_toe.min"],
+require(["jquery","js/tic_tac_toe/tic_tac_toe"],
 function( $, Tic_tac_toe) {
 	$( document ).ready(function(player) {
 		var tic_tac_toe=new Tic_tac_toe( function(player) {
