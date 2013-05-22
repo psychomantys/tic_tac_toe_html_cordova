@@ -30,3 +30,10 @@ a.out
 # svn
 .svn
 
+# npm
+node_modules
+
+# cordova
+.cordova
+platforms
+
