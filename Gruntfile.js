@@ -21,6 +21,8 @@ module.exports = function(grunt) {
 			$: true,
 			describe: true,
 			it: true,
+			xdescribe: true,
+			xit: true,
 			expect: true,
 			define: true,
 			require: true,
@@ -32,8 +34,9 @@ module.exports = function(grunt) {
 		tasks: 'linter jasmine'
 	},
 	jasmine: {
-		src: [ 'www/**/*.js', '!www/js/spec/**/*.spec.js' ],
+		src: [ 'www/thirdparty/require.js', '!www/js/spec/**/*.spec.js' ],
 		options: {
+			template: require('grunt-template-jasmine-requirejs'),
 			specs : 'www/js/spec/**/*.spec.js'
 		}
 	},

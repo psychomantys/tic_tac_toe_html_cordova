@@ -1,8 +1,25 @@
-/*global myapp:false*/
+require.config({
+	"baseUrl": ".",
+	"paths": {
+		"jquery": "thirdparty/jquery",
+		"underscore": "thirdparty/underscore",
+		"Tic_tac_toe": "www/js/tic_tac_toe/tic_tac_toe"
+	},
+	shim: {
+		'underscore': {
+			exports: '_'
+		}
+	}
+});
 
-/*
- * Make invocation tests for callbacks pass in ctor.
-**/
+xdescribe("A false case", function() {
+	it("canot be true", function() {
+		expect(true).toBe(false);
+	});
+});
+
+require(["Tic_tac_toe"],
+function (Tic_tac_toe) {
 
 describe("A basic interface for Tic-Tac-Toe game", function() {
 	var t;
@@ -12,7 +29,7 @@ describe("A basic interface for Tic-Tac-Toe game", function() {
 		var ui_mark=function(x,y,player) {
 		};
 
-		t=new myapp.Tic_tac_toe(winner_callback,ui_mark);
+		t=new Tic_tac_toe(winner_callback,ui_mark);
 		expect(t.winner_callback).toBe(winner_callback);
 		expect(t.ui_mark).toBe(ui_mark);
 	});
@@ -47,7 +64,7 @@ describe("A basic interface for Tic-Tac-Toe game", function() {
 		};
 		var ui_mark=function(x,y,player) {
 		};
-		var t=new myapp.Tic_tac_toe(ui_mark,winner_callback);
+		var t=new Tic_tac_toe(ui_mark,winner_callback);
 		t.mark(0,0);
 		t.mark(2,1);
 		t.mark(0,1);
@@ -63,8 +80,7 @@ describe("Winner condictions", function() {
 	var ui_mark=function(x,y,player) {
 	};
 
-	var t=new myapp.Tic_tac_toe(winner_callback,ui_mark);
-//	var t=new myapp.Tic_tac_toe();
+	var t=new Tic_tac_toe(winner_callback,ui_mark);
 
 	/* diag. */
 	it("Winner if player One make a first diagonal", function() {
@@ -143,5 +159,6 @@ describe("Winner condictions", function() {
 		t.mark(2,2);
 		expect( t.game_end ).toBe(true);
 	});
+});
 });
 
