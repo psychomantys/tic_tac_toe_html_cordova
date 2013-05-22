@@ -19,6 +19,7 @@
     "grunt": "*",
     "grunt-cli": "*",
     "grunt-contrib-jasmine": "*",
+    "grunt-template-jasmine-requirejs": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-requirejs": "*",
