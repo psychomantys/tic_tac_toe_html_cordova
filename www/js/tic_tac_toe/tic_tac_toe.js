@@ -4,7 +4,7 @@ define( function() {
 		this.player_1='X';
 		this.player_2='O';
 		this.player_actual='X';
-		this.not_marked='_';
+		this.not_marked='&nbsp;&nbsp;';
 		this.game_end=false;
 		this.board=[
 			[this.not_marked,this.not_marked,this.not_marked],

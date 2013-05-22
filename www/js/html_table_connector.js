@@ -20,7 +20,7 @@ function( $, Tic_tac_toe) {
 			$( '#who_win' ).text('Player "'+player+'" Wins!!!');
 		},function(x,y,player){
 			var get_td='#main_board tr td#'+x+'_'+y;
-			$( get_td ).text(player);
+			$( get_td ).html(player);
 		});
 		var func_temp=function(event){
 			event.data.tic_tac_toe.mark(event.data.x,event.data.y);
