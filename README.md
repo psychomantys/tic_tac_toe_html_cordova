@@ -23,16 +23,32 @@ Grunt (http://gruntjs.com/)
 
 Maybe:
 
-* npm install -g grunt
-* npm install --save-dev
+```shell
+npm install -g grunt
+npm install --save-dev
+```
+
+Third Party JavaScript library
+---------------------------------------------------------
+
+To re-install the third party JavaScript deps., execute:
+
+```shell
+grunt get_deps
+```
+
+If you execute ```npm install``` command before, the *npm* revolve this.
+
+In present time, deps. are managed by volo.
 
 Build application
 =========================================================
 
 Execute tests and deploy application:
 
-* grunt
-
+```shell
+grunt
+```
 
 How to use cordova
 =========================================================
@@ -41,22 +57,27 @@ Cordova-cli(https://github.com/apache/cordova-cli)
 
 Include sdks bin paths on PATH, and:
 
-```
+```shell
 export PATH="${PATH}:node_modules/.bin/"
 ```
 
 Test application for android:
 
-* grunt debug:android
+```shell
+grunt debug:android
+```
 
 Test application for blackberry:
 
-* grunt debug:blackberry
+```shell
+grunt debug:blackberry
+```
 
 Test application for ios:
 
-* grunt debug:ios
-
+```shell
+grunt debug:ios
+```
 
 How to use jasmine test with phatom and syntax validation
 =========================================================
@@ -65,13 +86,19 @@ Test: Jasmine (http://pivotal.github.io/jasmine/)
 
 Execute syntax validation test:
 
-* grunt linter
+```shell
+grunt test_syntax
+```
 
-Execute unit test and BDD:
+Execute unit test, TDD and BDD:
 
-* grunt jasmine
+```shell
+grunt test_tdd
+```
 
 Execute all tests:
 
-* grunt test
+```shell
+grunt test
+```
 
