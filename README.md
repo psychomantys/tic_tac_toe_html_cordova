@@ -1,4 +1,4 @@
-Tic tac toe html cordova
+Tic tac toe html cordova [![Build Status](https://travis-ci.org/psychomantys/tic_tac_toe_html_cordova.png)](https://travis-ci.org/psychomantys/tic_tac_toe_html_cordova)
 =========================================================
 
 Sample tic tac toe html5 game for mobile device(android, iphone, windows phone...) with cordova.
