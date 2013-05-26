@@ -72,8 +72,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-linter');
 	grunt.loadNpmTasks('grunt-volo');
-	grunt.loadNpmTasks('grunt-linter');
-
 
 	// Default task
 	grunt.registerTask('default', ['test_syntax','min_code','test_tdd']);

@@ -1,9 +1,9 @@
 require.config({
-	"baseUrl": ".",
+	"baseUrl": "www/",
 	"paths": {
 		"jquery": "thirdparty/jquery",
 		"underscore": "thirdparty/underscore",
-		"Tic_tac_toe": "www/js/tic_tac_toe/tic_tac_toe"
+		"Tic_tac_toe": "js/tic_tac_toe/tic_tac_toe"
 	},
 	shim: {
 		'underscore': {
@@ -12,7 +12,7 @@ require.config({
 	}
 });
 
-xdescribe("A false case", function() {
+describe("A false case", function() {
 	it("canot be true", function() {
 		expect(true).toBe(false);
 	});
