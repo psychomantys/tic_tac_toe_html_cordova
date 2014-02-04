@@ -11,3 +11,7 @@ notifications:
   email:
     - psycho.mantys@gmail.com
 
+branches:
+  only:
+    - gh-pages
+
