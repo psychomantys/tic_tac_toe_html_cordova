@@ -12,11 +12,11 @@ require.config({
 	}
 });
 
-describe("A false case", function() {
-	it("canot be true", function() {
-		expect(true).toBe(false);
-	});
-});
+//describe("A false case", function() {
+//	it("canot be true", function() {
+//		expect(true).not.toBe(false);
+//	});
+//});
 
 require(["Tic_tac_toe"],
 function (Tic_tac_toe) {
