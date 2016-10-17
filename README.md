@@ -82,7 +82,7 @@ grunt debug:ios
 How to use jasmine test with phatom and syntax validation
 =========================================================
 
-Test: Jasmine (http://pivotal.github.io/jasmine/)
+Test: Jasmine (https://jasmine.github.io/)
 
 Execute syntax validation test:
 
